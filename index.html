@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vidyo WebRTC demo</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="https://static.platform.vidyo.io/vidyoclient/webrtc/latest/VidyoClient.css">
+</head>
+<body>
+	<div id='renderer' class="renderer"></div>
+	<div class="controls">
+		<label>Name</label>
+		<input type="text" id="name" value="User1" size="20">
+		<label>Meeting link</label>
+		<input type="text" id="meetingLink" size="50" disabled>
+		<label>Pin</label>
+		<input type="text" id="pin" size="6" disabled>
+		<div class="buttons">
+			<button onclick="joinCall()" class="btnstart">Start call</button>
+			<button onclick="endCall()" class="btnend">End call</button>
+		</div>
+	</div>
+	<script src="main.js"></script>
+	<script src="https://static.platform.vidyo.io/vidyoclient/webrtc/latest/VidyoClient.js" onload='onVidyoClientLoaded()'></script>
+</body>
+</html>
