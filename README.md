@@ -1,55 +1,3 @@
-<div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Best-README-Template</h3>
-
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
-  </p>
-</div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -99,21 +47,20 @@ This project demonstrates how you can use Vidyo's javascript libraries to add vi
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/VidyoAPI-SDK/nativeWebRTC-getting-started-sample.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install http-server
    ```
-4. start local http server using following command `http-server'. This will start a http server on the localhost and open index.html in the browser
+3. start local http server using following command `http-server'. This will start a http server on the localhost and open index.html in the browser
 
-5. In the browser pop-up, allow the  page access to audio and video.
+4. In the browser pop-up, allow the  page access to audio and video.
 
-6. Clock the 'start call' button. This will start a video call in a private room. The generated  link and PIN can be shared with others, who can join your call from their browser thoruhg the link.
+5. Clock the 'start call' button. This will start a video call in a private room. The generated  link and PIN can be shared with others, who can join your call from their browser thoruhg the link.
 
 
 
