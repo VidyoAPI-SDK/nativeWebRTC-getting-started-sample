@@ -2,7 +2,12 @@
 <!-- ABOUT THE PROJECT -->
 # About The Project
 
-This project demonstrates how you can use Vidyo's javascript library to add videoconferenceing to your web page with just a few lines of code. This is the "hello world" equivalent of videoconferencing using Vidyo's leading videoconferencing platform. 
+Do you want to quickly add videoconferencing to your web page ? Are you looking for a solution that will "just work" in all desktop and mobile browsers without requiring users to install a plugin or download an app ?
+
+This sample project showcases how you can do just that using Vidyo's state-of-the-art webRTC based javascript library. Just a few lines of code and you can host live meetings in your web page. 
+
+This particular demo showcases the "hello world" equivalent of a videoconferencing solution. For a full featured version, plesae checkout 
+https://github.com/VidyoAPI-SDK/nativeWebRTC-vidyoconnect-sample
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
