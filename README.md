@@ -1,20 +1,16 @@
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+# About The Project
 
-This project demonstrates how you can use Vidyo's javascript library to add videoconferenceing to your web page with just a few lines of code. This is the "hello world" equivalent of videoconferencing using Vidyo's leading videoconferencing platform. To see a full featured video conferencing application in action, go to <other example link>
+This project demonstrates how you can use Vidyo's javascript library to add videoconferenceing to your web page with just a few lines of code. This is the "hello world" equivalent of videoconferencing using Vidyo's leading videoconferencing platform. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-### Prerequisites
+# Prerequisites
 
 * npm (https://nodejs.org/en/download/)
 <!-- HOW TO RUN THE DEMO -->
-## How to run the demo
+# How to run the demo
 
 Do the following from a terminal window:
 
@@ -26,15 +22,15 @@ Do the following from a terminal window:
    
 2. Install the http-server package using npm
    ```sh
-   npm install http-server
+   npm install http-server -g
    ```
 3. Start the http server
    ```sh
-   http-server
+   http-server 
    ```  
  This will start a local http server. Note the URL, which is  usually  http://127.0.0.1:8080 or http://127.0.0.1:8081
 
-4. Open the http server URL from the step above. In the browser pop-up, allow the  page access to audio and video.
+4. Open the http server URL from the step above in your browser. In the browser pop-up, allow the  page access to audio and video.
 
 ![Alt text](allowMedia.png?raw=true)
 
@@ -51,7 +47,7 @@ Do the following from a terminal window:
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+# Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -67,12 +63,12 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- LICENSE -->
-## License
+# License
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTACT -->
-## Contact
+# Contact
 
 Email: support@vidyocloud.com
 
