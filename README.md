@@ -1,36 +1,8 @@
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project demonstrates how you can use Vidyo's javascript libraries to add videoconferenceing to your web page with just a few lines of code. 
+This project demonstrates how you can use Vidyo's javascript library to add videoconferenceing to your web page with just a few lines of code. This is the "hello world" equivalent of videoconferencing using Vidyo's leading videoconferencing platform. To see a full featured video conferencing application in action, go to <other example link>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -40,68 +12,42 @@ This project demonstrates how you can use Vidyo's javascript libraries to add vi
 
 ### Prerequisites
 
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* npm (https://nodejs.org/en/download/)
+<!-- HOW TO RUN THE DEMO -->
+## How to run the demo
 
-### Installation
-
+Do the following from a terminal window:
 
 1. Clone the repo
    ```sh
    git clone https://github.com/VidyoAPI-SDK/nativeWebRTC-getting-started-sample.git
-   ```
-2. Install NPM packages
+
+2. Navigate to the project directory
+   
+2. Install the http-server package using npm
    ```sh
    npm install http-server
    ```
-3. start local http server using following command `http-server'. This will start a http server on the localhost and open index.html in the browser
+3. Start the http server
+   ```sh
+   http-server
+   ```  
+ This will start a local http server. Note the URL, which is  usually  http://127.0.0.1:8080 or http://127.0.0.1:8081
 
-4. In the browser pop-up, allow the  page access to audio and video.
+4. Open the http server URL from the step above. In the browser pop-up, allow the  page access to audio and video.
 
-5. Clock the 'start call' button. This will start a video call in a private room. The generated  link and PIN can be shared with others, who can join your call from their browser thoruhg the link.
+![Alt text](allowMedia.png?raw=true)
 
+5. Click the 'start call' button. This will start a video call in a private room. 
 
-
-
-### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-
-   ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+![Alt text](startCall.png?raw=true)
 
 
+6. After a call is started, a meeting link and PIN are generated. This link and PIN can be shared with others who can join your call from their browser using the link.
 
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+![Alt text](meetingLink.png?raw=true)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
@@ -120,48 +66,20 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
 ## License
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Email: support@vidyocloud.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-
+Company Link: https://www.vidyo.com/company/contact-vidyo
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+
