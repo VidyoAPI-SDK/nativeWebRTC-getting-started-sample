@@ -1,7 +1,6 @@
 // declare global variables
 let vidyoConnector = null;
 let meetingLink = document.getElementById('meetingLink');
-let pin = document.getElementById('pin');
 let name = document.getElementById('name');
 
 function onVidyoClientLoaded() {
@@ -44,7 +43,6 @@ async function joinCall() {
             onSuccess: () => {
                 console.log(`vidyoConnector.ConnectToRoomAsGuest : onSuccess callback received`);
                 meetingLink.value = res.roomUrl;
-                pin.value = res.pin;
             },
             onFailure: (reason) => {
                 console.error("vidyoConnector.Connect : onFailure callback received", reason);
@@ -61,5 +59,4 @@ async function joinCall() {
 function endCall() {
     vidyoConnector.Disconnect();
     meetingLink.value = '';
-    pin.value = '';
 }
