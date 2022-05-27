@@ -55,13 +55,6 @@ Do the following from a terminal window:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
-
-<!-- LICENSE -->
-# License
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 <!-- CONTACT -->
 # Contact
 
