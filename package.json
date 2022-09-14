@@ -22,5 +22,8 @@
   "homepage": "https://github.com/VidyoAPI-SDK/nativeWebRTC-getting-started-sample#readme",
   "dependencies": {
     "http-server": "^14.1.1"
+  },
+  "stackblitz": {
+    "startCommand": "http-server"
   }
 }
