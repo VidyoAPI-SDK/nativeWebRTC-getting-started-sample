@@ -1,0 +1,23 @@
+{
+  "name": "nativewebrtc-getting-started-sample",
+  "version": "1.0.0",
+  "description": "vidyo webconferencing getting started sample",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VidyoAPI-SDK/nativeWebRTC-getting-started-sample.git"
+  },
+  "keywords": [
+    "getting",
+    "started"
+  ],
+  "author": "vidyo engineering",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VidyoAPI-SDK/nativeWebRTC-getting-started-sample/issues"
+  },
+  "homepage": "https://github.com/VidyoAPI-SDK/nativeWebRTC-getting-started-sample#readme"
+}
