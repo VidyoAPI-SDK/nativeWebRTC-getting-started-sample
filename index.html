@@ -8,17 +8,24 @@
 	<link rel="stylesheet" href="https://static.platform.vidyo.io/vidyoclient/webrtc/latest/VidyoClient.css">
 </head>
 <body>
-	<div id='renderer' class="renderer"></div>
-	<div class="controls">
-		<label>Name</label>
-		<input type="text" id="name" value="User1" size="20">
-		<label>Meeting link</label>
-		<input type="text" id="meetingLink" size="50" disabled>
-		<div class="buttons">
-			<button onclick="joinCall()" class="btnstart">Start call</button>
-			<button onclick="endCall()" class="btnend">End call</button>
+	<main>
+		<div class="side-panel">
+			<img class="logo" src="./assets/vidyoPlatformLogo.png">
+			<input type="text" id="name" value="User1" size="20" placeholder="Display name">
+			<span>Meeting link:</span>
+			<div class="meeting-link">
+				<input class="meeting-link" type="text" id="meetingLink" size="50" disabled>
+				<label title="Copy to clipboard" onclick="copyToClipboard()">
+					<img src="./assets/copy_white.svg">
+				</label>
+			</div>
 		</div>
-	</div>
+		<div id='renderer' class="renderer"></div>
+		<div class="controls">
+			<button id="btnStart" title="Start call" onclick="joinCall()" class="btnstart"></button>
+			<button id="btnEnd" title="End call" onclick="endCall()" class="btnend"></button>
+		</div>
+	</main>
 	<script src="main.js"></script>
 	<script src="https://static.platform.vidyo.io/vidyoclient/webrtc/latest/VidyoClient.js" onload='onVidyoClientLoaded()'></script>
 </body>

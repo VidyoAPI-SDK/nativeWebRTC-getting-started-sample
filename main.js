@@ -1,6 +1,7 @@
 // declare global variables
 let vidyoConnector = null;
 let meetingLink = document.getElementById('meetingLink');
+let startBtn = document.getElementById('btnStart');
 let name = document.getElementById('name');
 
 function onVidyoClientLoaded() {
@@ -28,6 +29,7 @@ async function init() {
 
 async function joinCall() {
     try {
+        startBtn.disabled = true;
         // create new room
         let res = await fetch('https://vidyo-adhoc-zsdgxlqgkq-uc.a.run.app/api/v1/rooms', {method: 'POST'});
         res = await res.json();
@@ -42,13 +44,19 @@ async function joinCall() {
             roomPin: res.pin,
             onSuccess: () => {
                 console.log(`vidyoConnector.ConnectToRoomAsGuest : onSuccess callback received`);
-                meetingLink.value = res.roomUrl;
+                meetingLink.setAttribute('value', res.roomUrl);
+                document.body.classList.add('in-call');
+                startBtn.disabled = false;
             },
             onFailure: (reason) => {
                 console.error("vidyoConnector.Connect : onFailure callback received", reason);
+                document.body.classList.remove('in-call');
+                startBtn.disabled = false;
             },
             onDisconnected: (reason) => {
                 console.log("vidyoConnector.Connect : onDisconnected callback received", reason);
+                document.body.classList.remove('in-call');
+                startBtn.disabled = false;
             }
         });
     } catch(error) {
@@ -58,5 +66,11 @@ async function joinCall() {
 
 function endCall() {
     vidyoConnector.Disconnect();
-    meetingLink.value = '';
+    document.body.classList.remove('in-call');
+    meetingLink.setAttribute('value', '');
+    startBtn.disabled = false;
+}
+
+function copyToClipboard() {
+    navigator.clipboard.writeText(meetingLink.value);
 }
