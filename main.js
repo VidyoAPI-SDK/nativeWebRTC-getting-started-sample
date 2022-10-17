@@ -29,6 +29,9 @@ async function init() {
 
 async function joinCall() {
     try {
+        if (!name.checkValidity()) {
+            return name.reportValidity();
+        }
         startBtn.disabled = true;
         // create new room
         let res = await fetch('https://vidyo-adhoc-zsdgxlqgkq-uc.a.run.app/api/v1/rooms', {method: 'POST'});
@@ -60,7 +63,8 @@ async function joinCall() {
             }
         });
     } catch(error) {
-        console.log(error)
+        console.log(error);
+        startBtn.disabled = false;
     };
 }
 
