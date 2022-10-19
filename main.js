@@ -1,5 +1,7 @@
 // declare global variables
 let vidyoConnector = null;
+let startTooltip = document.getElementById('startTooltip');
+let loadingPopUp = document.getElementById('loadingPopUp');
 let meetingLink = document.getElementById('meetingLink');
 let startBtn = document.getElementById('btnStart');
 let name = document.getElementById('name');
@@ -22,6 +24,7 @@ async function init() {
             constraints: {}
         });
         console.log("create success");
+        startTooltip.classList.add('active')
     } catch (error) {
         console.error('creating failed', error);
     }
@@ -33,6 +36,8 @@ async function joinCall() {
             return name.reportValidity();
         }
         startBtn.disabled = true;
+        startTooltip.classList.remove('active');
+        loadingPopUp.setAttribute('data-text', 'Creating a room...');
         // create new room
         let res = await fetch('https://vidyo-adhoc-zsdgxlqgkq-uc.a.run.app/api/v1/rooms', {method: 'POST'});
         res = await res.json();
@@ -40,6 +45,8 @@ async function joinCall() {
         const params = res.roomUrl.split('/join/');
         const portal = params[0];
         const roomKey = params[1];
+
+        loadingPopUp.setAttribute('data-text', 'Joining a call...');
         await vidyoConnector.ConnectToRoomAsGuest({
             host: portal, // HOST
             roomKey: roomKey, //ROOM KEY
@@ -47,34 +54,37 @@ async function joinCall() {
             roomPin: res.pin,
             onSuccess: () => {
                 console.log(`vidyoConnector.ConnectToRoomAsGuest : onSuccess callback received`);
-                meetingLink.setAttribute('value', res.roomUrl);
+                meetingLink.textContent = res.roomUrl;
+                loadingPopUp.setAttribute('data-text', '');
                 document.body.classList.add('in-call');
                 startBtn.disabled = false;
             },
             onFailure: (reason) => {
                 console.error("vidyoConnector.Connect : onFailure callback received", reason);
-                document.body.classList.remove('in-call');
-                startBtn.disabled = false;
+                handleDisconnect();
             },
             onDisconnected: (reason) => {
                 console.log("vidyoConnector.Connect : onDisconnected callback received", reason);
-                document.body.classList.remove('in-call');
-                startBtn.disabled = false;
+                handleDisconnect();
             }
         });
     } catch(error) {
         console.log(error);
-        startBtn.disabled = false;
+        handleDisconnect();
     };
 }
 
 function endCall() {
     vidyoConnector.Disconnect();
+}
+
+function handleDisconnect() {
+    loadingPopUp.setAttribute('data-text', '');
     document.body.classList.remove('in-call');
-    meetingLink.setAttribute('value', '');
+    meetingLink.textContent = '';
     startBtn.disabled = false;
 }
 
 function copyToClipboard() {
-    navigator.clipboard.writeText(meetingLink.value);
+    navigator.clipboard.writeText(meetingLink.textContent);
 }
