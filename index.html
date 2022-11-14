@@ -13,24 +13,35 @@
 			<img class="logo" src="./assets/vidyoPlatformLogo.png">
 			<label for="name">Display name:</label>
 			<input type="text" id="name" value="User1" size="20" placeholder="Display name" required>
+			<div class="controls">
+				<div>
+					<div id="startTooltip" class="tooltip">Click here to generate a meeting link and join the call</div>
+					<button id="btnStart" title="Start call" onclick="joinCall()" class="btnstart"></button>
+				</div>
+				<button id="btnEnd" title="End call" onclick="endCall()" class="btnend"></button>
+			</div>
 		</div>
 		<div class="renderer-container">
 			<div class="meeting-link">
+				<span>Room info:</span>
+				<img src="./assets/call_info.svg" title="Room info" onclick="roomInfoClick()">
 				<span>Meeting link:</span>
 				<img src="./assets/copy_white.svg" title="Copy to clipboard" onclick="copyToClipboard()">
 				<span id="meetingLink"></span>
 			</div>
 			<div id="renderer"></div>
 		</div>
-		<div class="controls">
-			<div>
-				<div id="startTooltip" class="tooltip">Click here to generate a meeting link and join the call</div>
-				<button id="btnStart" title="Start call" onclick="joinCall()" class="btnstart"></button>
-			</div>
-			<button id="btnEnd" title="End call" onclick="endCall()" class="btnend"></button>
-		</div>
+
 		<div id="loadingPopUp" class="loading-popup" data-text="">
 			<div class="loader"></div>
+		</div>
+		<div id="roomInfoPopUp" class="room-info-popup-container">
+			<div class="room-info-popup">
+				<pre class="room-info-text"></pre>
+				<button type="button" class="room-info-popup-close-btn">
+					<span>Close</span>
+				</button>
+			</div>
 		</div>
 	</main>
 	<script src="main.js"></script>

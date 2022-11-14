@@ -16,15 +16,13 @@ main {
     display: grid;
     grid-template:
         "s r"
-        "s r"
-        "c c" 60px / 300px 1fr;
+        "s r" 60px / 300px 1fr;
 }
 @media screen and (max-width: 600px) {
     main {
         grid-template:
             "s s" auto
-            "r r" 1fr
-            "c c" 60px;
+            "r r" 1fr;
     }
     .side-panel {
         justify-self: center;
@@ -56,7 +54,6 @@ main {
     cursor: pointer;
     white-space: nowrap;
     user-select: none;
-    background-image: none;
     box-shadow: none;
     color: #fff;
     height: 36px;
@@ -90,7 +87,7 @@ main {
 }
 .meeting-link {
     display: grid;
-    grid-template-columns: auto 24px auto;
+    grid-template-columns: auto auto auto 24px auto;
     justify-self: end;
     visibility: hidden;
     padding: 10px 20px;
@@ -121,8 +118,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #1a1a1a;
-    grid-area: c;
+    position: relative;
 }
 .controls button {
     position: relative;
@@ -197,37 +193,95 @@ body:not(.in-call) .btnend {
 .loading-popup[data-text=""] {
     display: none;
 }
-.tooltip {
+.room-info-popup-container {
+    background-color: rgba(16, 22, 26, 0.7);
+    display: grid;
     position: absolute;
-    width: 250px;
-    padding: 20px;
-    border-radius: 15px;
-    line-height: 20px;
-    font-size: 16px;
-    font-weight: 200;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.room-info-popup {
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 700px;
+    position: absolute;
+    display: grid;
+    grid-template-rows: auto 50px;
+    justify-items: center;
+    align-self: center;
+    justify-self: center;
+    background-color: #262626;
+    border-radius: 5px;
+    padding: 15px;
+}
+.room-info-popup-close-btn {
+    background-color: #83c36d;
+    border-radius: 3px;
+    height: 38px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+    background-image: none;
+    box-shadow: none;
+    border: none;
+    text-transform: uppercase;
+    width: 100%;
+    cursor: pointer;
+}
+.room-info-popup-close-btn:hover {
+    background-color: #68a254;
+}
+.room-info-text {
+    margin-top: 0px;
+    font-family: inherit;
+    font-size: 12pt;
+    font-weight: 300;
+    line-height: 20pt;
+    white-space: pre-wrap;
+}
+
+.room-info-text a {
     color: white;
-    text-align: center;
-    background-color: #5c92d6;
-    transform: translate(-50%);
-    bottom: 65px;
-    left: 50%;
-    opacity: 0;
-    transition: opacity ease-in .25s;
-    pointer-events: none;
+}
+
+.room-info-popup-container:not([data-show]){
+   display: none;
+}
+
+.tooltip {
+position: absolute;
+width: 250px;
+padding: 20px;
+border-radius: 15px;
+line-height: 20px;
+font-size: 16px;
+font-weight: 200;
+color: white;
+text-align: center;
+background-color: #5c92d6;
+transform: translate(-50%);
+top: 65px;
+left: 50%;
+opacity: 0;
+transition: opacity ease-in .25s;
+pointer-events: none;
 }
 .tooltip::after {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #5c92d6;
-    transform: translateX(-50%);
-    bottom: -10px;
-    left: 50%;
+position: absolute;
+content: "";
+width: 0;
+height: 0;
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-bottom: 10px solid #5c92d6;
+transform: translateX(-50%);
+top: -10px;
+left: 50%;
 }
 .tooltip.active {
-    transition: opacity ease-in 2s;
-    opacity: 1;
+transition: opacity ease-in 2s;
+opacity: 1;
 }
