@@ -204,9 +204,10 @@ body:not(.in-call) .btnend {
 }
 
 .room-info-popup {
-    min-width: 500px;
-    max-width: 500px;
-    min-height: 700px;
+    min-width: 400px;
+    max-width: 600px;
+    min-height: 400px;
+    max-height: 800px;
     position: absolute;
     display: grid;
     grid-template-rows: auto 50px;
@@ -230,6 +231,8 @@ body:not(.in-call) .btnend {
     text-transform: uppercase;
     width: 100%;
     cursor: pointer;
+    margin: 1em;
+    padding: 1em;
 }
 .room-info-popup-close-btn:hover {
     background-color: #68a254;
@@ -239,7 +242,7 @@ body:not(.in-call) .btnend {
     font-family: inherit;
     font-size: 12pt;
     font-weight: 300;
-    line-height: 20pt;
+    line-height: 12pt;
     white-space: pre-wrap;
 }
 
