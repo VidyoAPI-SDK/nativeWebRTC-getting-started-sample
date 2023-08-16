@@ -1,16 +1,13 @@
+import { VC } from 'https://cdn.jsdelivr.net/npm/vidyoclient-nativewebrtc-sdk';
 // declare global variables
 let vidyoConnector = null;
-let startTooltip = document.getElementById('startTooltip');
-let loadingPopUp = document.getElementById('loadingPopUp');
-let meetingLink = document.getElementById('meetingLink');
-let startBtn = document.getElementById('btnStart');
-let name = document.getElementById('name');
-
-function onVidyoClientLoaded() {
-    window.VC = new window.VidyoClientLib.VidyoClient('', () => {
-        init();
-    });
-}
+const startTooltip = document.getElementById('startTooltip');
+const loadingPopUp = document.getElementById('loadingPopUp');
+const meetingLink = document.getElementById('meetingLink');
+const startBtn = document.getElementById('btnStart');
+const endBtn = document.getElementById('btnEnd');
+const copyBtn = document.getElementById('copyBtn');
+const name = document.getElementById('name');
 
 async function init() {
     try {
@@ -71,7 +68,7 @@ async function joinCall() {
     } catch(error) {
         console.log(error);
         handleDisconnect();
-    };
+    }
 }
 
 function endCall() {
@@ -88,3 +85,9 @@ function handleDisconnect() {
 function copyToClipboard() {
     navigator.clipboard.writeText(meetingLink.textContent);
 }
+
+startBtn.onclick = () => joinCall();
+endBtn.onclick = () => endCall();
+copyBtn.onclick = () => copyToClipboard();
+
+init();
