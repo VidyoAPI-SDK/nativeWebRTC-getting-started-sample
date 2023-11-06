@@ -43,37 +43,28 @@ async function joinCall() {
         const portal = params[0];
         const roomKey = params[1];
 
-        const _joinCall = async () => {
-            roomInfoPopUp.removeAttribute('data-show');
-            loadingPopUp.setAttribute('data-text', 'Joining a call...');
-            await vidyoConnector.ConnectToRoomAsGuest({
-                host: portal, // HOST
-                roomKey: roomKey, //ROOM KEY
-                displayName: name.value,
-                roomPin: res.pin,
-                onSuccess: () => {
-                    console.log(`vidyoConnector.ConnectToRoomAsGuest : onSuccess callback received`);
-                    meetingLink.textContent = res.roomUrl;
-                    loadingPopUp.setAttribute('data-text', '');
-                    document.body.classList.add('in-call');
-                    startBtn.disabled = false;
-                },
-                onFailure: (reason) => {
-                    console.error("vidyoConnector.Connect : onFailure callback received", reason);
-                    handleDisconnect();
-                },
-                onDisconnected: (reason) => {
-                    console.log("vidyoConnector.Connect : onDisconnected callback received", reason);
-                    handleDisconnect();
-                }
-            });
-        };
-
-        roomInfoText.innerHTML = wrapLinks(res.inviteContent);
-        roomInfoBtn.firstElementChild.innerHTML = 'Join';
-        roomInfoBtn.onclick = () => _joinCall();
-        roomInfoPopUp.setAttribute('data-show', true);
-
+        loadingPopUp.setAttribute('data-text', 'Joining a call...');
+        await vidyoConnector.ConnectToRoomAsGuest({
+            host: portal, // HOST
+            roomKey: roomKey, //ROOM KEY
+            displayName: name.value,
+            roomPin: res.pin,
+            onSuccess: () => {
+                console.log(`vidyoConnector.ConnectToRoomAsGuest : onSuccess callback received`);
+                meetingLink.textContent = res.roomUrl;
+                loadingPopUp.setAttribute('data-text', '');
+                document.body.classList.add('in-call');
+                startBtn.disabled = false;
+            },
+            onFailure: (reason) => {
+                console.error("vidyoConnector.Connect : onFailure callback received", reason);
+                handleDisconnect();
+            },
+            onDisconnected: (reason) => {
+                console.log("vidyoConnector.Connect : onDisconnected callback received", reason);
+                handleDisconnect();
+            }
+        });
     } catch(error) {
         console.log(error);
         handleDisconnect();
@@ -89,12 +80,6 @@ function handleDisconnect() {
     document.body.classList.remove('in-call');
     meetingLink.textContent = '';
     startBtn.disabled = false;
-}
-
-function roomInfoClick() {
-    roomInfoBtn.firstElementChild.innerHTML = 'Close';
-    roomInfoBtn.onclick = () => roomInfoPopUp.removeAttribute('data-show');
-    roomInfoPopUp.setAttribute('data-show', true);
 }
 
 function copyToClipboard() {
