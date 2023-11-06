@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Vidyo WebRTC demo</title>
 	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="https://static.platform.vidyo.io/vidyoclient/webrtc/latest/VidyoClient.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vidyoclient-nativewebrtc-sdk/dist/VidyoClient.css">
 </head>
 <body>
 	<main>
@@ -26,12 +26,18 @@
 				<span>Room info:</span>
 				<img src="./assets/call_info.svg" title="Room info" onclick="roomInfoClick()">
 				<span>Meeting link:</span>
-				<img src="./assets/copy_white.svg" title="Copy to clipboard" onclick="copyToClipboard()">
+				<img src="./assets/copy_white.svg" title="Copy to clipboard" id="copyBtn">
 				<span id="meetingLink"></span>
 			</div>
 			<div id="renderer"></div>
 		</div>
-
+		<div class="controls">
+			<div>
+				<div id="startTooltip" class="tooltip">Click here to generate a meeting link and join the call</div>
+				<button id="btnStart" title="Start call" class="btnstart"></button>
+			</div>
+			<button id="btnEnd" title="End call" class="btnend"></button>
+		</div>
 		<div id="loadingPopUp" class="loading-popup" data-text="">
 			<div class="loader"></div>
 		</div>
@@ -44,7 +50,6 @@
 			</div>
 		</div>
 	</main>
-	<script src="main.js"></script>
-	<script src="https://static.platform.vidyo.io/vidyoclient/webrtc/latest/VidyoClient.js" onload='onVidyoClientLoaded()'></script>
+	<script src="main.js" type="module"></script>
 </body>
 </html>
