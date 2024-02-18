@@ -60,7 +60,3 @@ Email: support@vidyocloud.com
 Company Link: https://www.vidyo.com/company/contact-vidyo
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-just test
