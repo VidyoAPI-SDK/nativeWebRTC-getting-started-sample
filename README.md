@@ -12,7 +12,7 @@ This sample application aims to achieve the following:
 
   **- Demonstrates how easy it is to integrate Vidyo’s SDK into your solution and have an embedded in brand robust video communication capability.**
   
-  Contact us at https://www.vidyo.com/company/contact-vidyo to learn more or tell us what you think.
+  Contact us at https://www.enghousevideo.com/develop-video-app-platform to learn more or tell us what you think.
 
 Happy Coding.
 
