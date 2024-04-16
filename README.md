@@ -57,6 +57,6 @@ Do the following from a terminal window:
 
 Email: support@vidyocloud.com
 
-Company Link: https://www.vidyo.com/company/contact-vidyo
+Company Link: https://www.enghousevideo.com/develop-video-app-platform
 
 <p align="right">(<a href="#top">back to top</a>)</p>
